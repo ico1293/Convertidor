@@ -46,19 +46,19 @@ public class Convertidor {
         return cantidad;
     }
     
-    public double CalcularMetrosToCentimetros()
+    public double calcularMetrosToCentimetros(double cantidad)
     {
         respuesta = cantidad * metros2Centimetros;
         return respuesta;
     }
     
-    public double CalcularLitrosToGalones()
+    public double calcularLitrosToGalones(double cantidad)
     {
         respuesta = cantidad * litros2Galones;
         return respuesta;
     }
     
-    public double CalcularHorasToSegundos()
+    public double calcularHorasToSegundos(double cantidad)
     {
         respuesta = cantidad * horas2Segundos;
         return respuesta;

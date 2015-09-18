@@ -10,11 +10,17 @@ package convertidor;
  * @author Stiven
  */
 public class Interfaz extends javax.swing.JFrame {
-
+    // INSTANCIAR OBJETOS
+    Convertidor convertidor;
+    // VARIABLES GLOBALES
+    double cantidad = 0;
+    double respuesta = 0;
+    
     /**
      * Creates new form Interfaz
      */
     public Interfaz() {
+        convertidor = new Convertidor();
         initComponents();
     }
 
@@ -140,6 +146,7 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel4.setText("Respuesta");
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -198,53 +205,31 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         System.out.println(jTextField1.getText());
+        cantidad = Double.parseDouble(getCantidad());
+        //LE MANDO LA CANTIDAD CAPTURADA A LA CLASE CONVERTIDOR E IMPRIMO LA RESPUESTA
+        if (jRadioButton1.isSelected()){
+            respuesta = convertidor.calcularMetrosToCentimetros(cantidad);
+            jTextField2.setText(String.valueOf(respuesta));
+        }else if (jRadioButton2.isSelected()){
+            respuesta = convertidor.calcularLitrosToGalones(cantidad);
+            jTextField2.setText(String.valueOf(respuesta));
+        }else if (jRadioButton3.isSelected()){
+            respuesta = convertidor.calcularHorasToSegundos(cantidad);
+            jTextField2.setText(String.valueOf(respuesta));
+        }
+        
     }//GEN-LAST:event_jButton1MouseClicked
     
-    //OBTENER CANTIDAD
-    public String GetCantidad()
+    // METODO OBTENER CANTIDAD
+    public String getCantidad()
     {
         String cantidad = jTextField1.getText();
         return cantidad;
     }
-    //EJECUTAR BOTON
-    public void Button()
+    // METODO ENVIAR CANTIDAD
+    public void setCantidad(String cantidad)
     {
-        jButton1MouseClicked(null);
-
-    }
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Interfaz().setVisible(true);
-            }
-        });
+        jTextField2.setText(cantidad);
     }
     
 
