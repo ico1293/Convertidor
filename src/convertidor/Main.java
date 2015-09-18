@@ -6,6 +6,7 @@
 package convertidor;
 import convertidor.Convertidor;
 import javax.swing.JOptionPane;
+import convertidor.Interfaz;
 /**
  *
  * @author Stiven
@@ -17,6 +18,26 @@ public class Main {
      */
     public static void main(String[] args) 
     {
+       //INSTANCEAR OBEJTOS
+        Interfaz interfaz = new Interfaz();
+        double cantidad = Double.parseDouble(interfaz.GetCantidad());
+        Convertidor convertidor = new Convertidor();
+        
+        //INICIAR INTERFAZ
+        interfaz.main(args);
+        interfaz.Button();
+        
+        
+        
+        
+        
+        //String numero = interfaz.Jtext();
+        //System.out.println(interfaz.Jtext());
+        
+        //cantidad = Double.parseDouble()
+        //System.out.println(interfaz.Jtext());
+        
+        /*
         int eleccion = Integer.parseInt(JOptionPane.showInputDialog("1.Metros To Centimetros\n2.Litros To Galones\n3.Horas to Segundos"));
         double cantidad = Double.parseDouble(JOptionPane.showInputDialog("Ingrese cantidad"));
         //SE CREA UN OBJETO DE LA SIGUIENTE FORMA: NOMBRE DE LA CLASE-NOMBRE DEL OBJETO-NEW-NOMBRE DEL CONSTRUCTOR
@@ -31,7 +52,7 @@ public class Main {
             case 3: System.out.println(convertidor.MostrarCantidad() + " Horas son " + convertidor.CalcularHorasToSegundos() + " Segundos");
                 break;
         }
-        
+        */
         /*
         //IMPRIMIR RESPUESTA (LLAMAMOS AL METODO DE LA FORMA: NOMBRE DEL OBJETO - . - METODO DE LA CLASE
         System.out.println(convertidor.MostrarCantidad() + " Metros son " + convertidor.Calcular() + " CentiMetros");
