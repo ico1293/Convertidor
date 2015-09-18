@@ -201,7 +201,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        System.out.println(jTextField1.getText());
+        System.out.println(getCantidad());
         double respuesta = 0;
         //LE MANDO LA CANTIDAD CAPTURADA A LA CLASE CONVERTIDOR E IMPRIMO LA RESPUESTA
         if (jRadioButton1.isSelected()){
