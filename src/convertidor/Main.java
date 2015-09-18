@@ -17,14 +17,25 @@ public class Main {
      */
     public static void main(String[] args) 
     {
-        double cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "ingrese cantidad"));
+        int eleccion = Integer.parseInt(JOptionPane.showInputDialog("1.Metros To Centimetros\n2.Litros To Galones\n3.Horas to Segundos"));
+        double cantidad = Double.parseDouble(JOptionPane.showInputDialog("Ingrese cantidad"));
         //SE CREA UN OBJETO DE LA SIGUIENTE FORMA: NOMBRE DE LA CLASE-NOMBRE DEL OBJETO-NEW-NOMBRE DEL CONSTRUCTOR
-        Convertidor metros2Centimetros = new Convertidor(cantidad);
+        Convertidor convertidor = new Convertidor(cantidad);
         
+        switch (eleccion)
+        {
+            case 1: System.out.println(convertidor.MostrarCantidad() + " Metros son " + convertidor.CalcularMetrosToCentimetros() + " CentiMetros");
+                break;
+            case 2: System.out.println(convertidor.MostrarCantidad() + " Litros son " + convertidor.CalcularLitrosToGalones() + " Galones");
+                break;
+            case 3: System.out.println(convertidor.MostrarCantidad() + " Horas son " + convertidor.CalcularHorasToSegundos() + " Segundos");
+                break;
+        }
         
+        /*
         //IMPRIMIR RESPUESTA (LLAMAMOS AL METODO DE LA FORMA: NOMBRE DEL OBJETO - . - METODO DE LA CLASE
-        System.out.println(metros2Centimetros.MostrarCantidad() + " Metros son " + metros2Centimetros.Calcular() + " CentiMetros");
- 
+        System.out.println(convertidor.MostrarCantidad() + " Metros son " + convertidor.Calcular() + " CentiMetros");
+        */
     }
     
 }
