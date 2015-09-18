@@ -226,7 +226,7 @@ public class Interfaz extends javax.swing.JFrame {
         double cantidad = Double.parseDouble(jTextField1.getText());
         return cantidad;
     }
-    // METODO ENVIAR CANTIDAD
+    // METODO ENVIAR CANTIDAD 
     public void setCantidad(double respuesta)
     {
         jTextField2.setText(String.valueOf(respuesta));
