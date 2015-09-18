@@ -19,11 +19,11 @@ public class Main {
     {
         double cantidad = Double.parseDouble(JOptionPane.showInputDialog(null, "ingrese cantidad"));
         //SE CREA UN OBJETO DE LA SIGUIENTE FORMA: NOMBRE DE LA CLASE-NOMBRE DEL OBJETO-NEW-NOMBRE DEL CONSTRUCTOR
-        Convertidor litros2Galones = new Convertidor(cantidad);
+        Convertidor metros2Centimetros = new Convertidor(cantidad);
         
         
         //IMPRIMIR RESPUESTA (LLAMAMOS AL METODO DE LA FORMA: NOMBRE DEL OBJETO - . - METODO DE LA CLASE
-        System.out.println(litros2Galones.MostrarCantidad() + " Metros son " + litros2Galones.Calcular() + " CentiMetros");
+        System.out.println(metros2Centimetros.MostrarCantidad() + " Metros son " + metros2Centimetros.Calcular() + " CentiMetros");
  
     }
     
