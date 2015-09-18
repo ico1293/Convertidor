@@ -21,9 +21,7 @@ public class Main {
     public static void main(String[] args) {
         //INICIAR INTERFAZ
         iniciarInterfaz();
-        
-
-
+    
         /*
          int eleccion = Integer.parseInt(JOptionPane.showInputDialog("1.Metros To Centimetros\n2.Litros To Galones\n3.Horas to Segundos"));
          double cantidad = Double.parseDouble(JOptionPane.showInputDialog("Ingrese cantidad"));
@@ -39,8 +37,6 @@ public class Main {
          case 3: System.out.println(convertidor.MostrarCantidad() + " Horas son " + convertidor.CalcularHorasToSegundos() + " Segundos");
          break;
          }
-         */
-        /*
          //IMPRIMIR RESPUESTA (LLAMAMOS AL METODO DE LA FORMA: NOMBRE DEL OBJETO - . - METODO DE LA CLASE
          System.out.println(convertidor.MostrarCantidad() + " Metros son " + convertidor.Calcular() + " CentiMetros");
          */

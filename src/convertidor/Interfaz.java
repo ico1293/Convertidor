@@ -12,9 +12,6 @@ package convertidor;
 public class Interfaz extends javax.swing.JFrame {
     // INSTANCIAR OBJETOS
     Convertidor convertidor;
-    // VARIABLES GLOBALES
-    double cantidad = 0;
-    double respuesta = 0;
     
     /**
      * Creates new form Interfaz
@@ -205,31 +202,34 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         System.out.println(jTextField1.getText());
-        cantidad = Double.parseDouble(getCantidad());
+        double respuesta = 0;
         //LE MANDO LA CANTIDAD CAPTURADA A LA CLASE CONVERTIDOR E IMPRIMO LA RESPUESTA
         if (jRadioButton1.isSelected()){
-            respuesta = convertidor.calcularMetrosToCentimetros(cantidad);
-            jTextField2.setText(String.valueOf(respuesta));
+            respuesta = convertidor.calcularMetrosToCentimetros(getCantidad());
+            setCantidad(respuesta);
+            System.out.println(respuesta);
         }else if (jRadioButton2.isSelected()){
-            respuesta = convertidor.calcularLitrosToGalones(cantidad);
-            jTextField2.setText(String.valueOf(respuesta));
+            respuesta = convertidor.calcularLitrosToGalones(getCantidad());
+            setCantidad(respuesta);
+            System.out.println(respuesta);
         }else if (jRadioButton3.isSelected()){
-            respuesta = convertidor.calcularHorasToSegundos(cantidad);
-            jTextField2.setText(String.valueOf(respuesta));
+            respuesta = convertidor.calcularHorasToSegundos(getCantidad());
+            setCantidad(respuesta);
+            System.out.println(respuesta);
         }
         
     }//GEN-LAST:event_jButton1MouseClicked
     
     // METODO OBTENER CANTIDAD
-    public String getCantidad()
+    public double getCantidad()
     {
-        String cantidad = jTextField1.getText();
+        double cantidad = Double.parseDouble(jTextField1.getText());
         return cantidad;
     }
     // METODO ENVIAR CANTIDAD
-    public void setCantidad(String cantidad)
+    public void setCantidad(double respuesta)
     {
-        jTextField2.setText(cantidad);
+        jTextField2.setText(String.valueOf(respuesta));
     }
     
 
